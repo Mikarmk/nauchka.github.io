@@ -1,0 +1,344 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.news-item img {
+    width: 40%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+}
+
+.news-item p {
+    width: 60%;
+    padding: 15px 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    min-width: 700px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-wrap: wrap;
+}
+
+.rating-item:hover {
+    transform: scale(1.02);
+}
+
+.rating-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.rating-item .participant-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.rating-item .points {
+
+    font-size: 16px;
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+@keyframes sparkle_g {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 230, 26, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(255, 219, 31);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 227, 41, 0.8);
+    }
+}
+
+@keyframes sparkle_s {
+    0% {
+        box-shadow: 0 0 10px rgba(194, 194, 194, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(197, 197, 197, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(199, 199, 199, 0.8);
+    }
+}
+
+@keyframes sparkle_b {
+    0% {
+        box-shadow: 0 0 10px rgba(222, 182, 160, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgb(229, 208, 169);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(243, 215, 182, 0.8);
+    }
+}
+
+.rating-item.gold {
+    background-color: #ffea7d;
+    animation: sparkle_g 1.5s infinite;
+}
+
+.rating-item.silver {
+    background-color: #e1e1e1;
+    animation: sparkle_s 1.5s infinite;
+}
+
+.rating-item.bronze {
+    background-color: #ffc896;
+    animation: sparkle_b 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+    .rating-item {
+        max-width: 100%;
+        min-width: 100%;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .rating-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .rating-item .participant-info {
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .rating-item .participant-info p {
+        font-size: 18px;
+    }
+
+    .rating-item .points {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-item {
+        padding: 8px;
+    }
+
+    .rating-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .rating-item .participant-info p {
+        font-size: 14px;
+    }
+
+    .rating-item .points {
+        font-size: 18px;
+    }
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2, .profile-info p {
+    margin: 5px 0;
+}
+
+.profile-sections {
+    width: 100%;
+}
+
+.profile-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #0077b6;
+}
+
+.profile-container.gold {
+    background-color: #ffea7d;
+    animation: sparkle_g 1.5s infinite;
+}
+
+.profile-container.silver {
+    background-color: #e1e1e1;
+    animation: sparkle_s 1.5s infinite;
+}
+
+.profile-container.bronze {
+    background-color: #ffc896;
+    animation: sparkle_b 1.5s infinite;
+}
+
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.achievement-item p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.skills-list p {
+    background-color: #0077b6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #0077b6;
+    font-weight: bold;
+}
